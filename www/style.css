@@ -1,1 +1,128 @@
+* {
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 854px; 
+    max-height: 480px;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    overflow: hidden;
+}
+
+#intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#start-screen {
+    width: 100%;
+    height: 100%;
+    background: url('fondo-inicio.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+#game-title {
+    max-width: 70%;
+    height: auto;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+}
+
+#play-btn {
+    cursor: pointer;
+    width: 120px;
+    height: auto;
+    transition: transform 0.2s;
+}
+
+#play-btn:hover {
+    transform: scale(1.1);
+}
+
+canvas {
+    background-color: #5c94fc;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Controles para celulares */
+#mobile-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.touch-btn {
+    width: 75px;
+    height: 75px;
+    background: rgba(255, 255, 255, 0.25);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    pointer-events: auto;
+    touch-action: manipulation;
+    position: absolute;
+    bottom: 5px;
+}
+
+.touch-btn:active {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(0.9);
+}
+
+#btn-left { left: 20px; }
+#btn-right { left: 115px; }
+#btn-jump { right: 20px; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
 
