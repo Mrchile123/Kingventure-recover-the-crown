@@ -1,1 +1,69 @@
+name: Build Android APK (Kingventure)
 
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      # Instala las dependencias necesarias de Capacitor
+      - name: Install Dependencies
+        run: |
+          npm init -y
+          npm install @capacitor/core @capacitor/cli
+          npm install @capacitor/android
+          npm install @capacitor/screen-orientation
+
+      # Inicializa Capacitor y añade la plataforma de Android
+      - name: Configure Capacitor Android Project
+        run: |
+          npx cap init Kingventure com.mrchile.kingventure --web-dir=www
+          npx cap add android
+
+      # Copia los archivos de tu carpeta www al entorno nativo de Android
+      - name: Sync Web Assets to Android
+        run: |
+          npx cap sync android
+
+      # Forzar la orientación Horizontal (Landscape) en el manifiesto de Android antes de compilar
+      - name: Force Landscape Orientation
+        run: |
+          sed -i 's/android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"/android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode" android:screenOrientation="landscape"/g' android/app/src/main/AndroidManifest.xml
+
+      # Compila el APK usando Gradle en modo Debug (Listo para instalar y probar sin firmas complejas)
+      - name: Build Android APK
+        run: |
+          cd android
+          ./gradlew assembleDebug
+
+      # Sube el APK generado directamente como un archivo descargable en tu Release de GitHub
+      - name: Upload APK to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: android/app/build/outputs/apk/debug/app-debug.apk
+          asset_name: Kingventure-v${{ github.event.release.tag_name }}.apk
+          asset_content_type: application/vnd.android.package-archive
