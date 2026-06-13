@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="King-orange.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="Jump0000" x="756" y="616" width="312" height="616" frameX="-192" frameY="-106" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Walk0000" x="1284" y="561" width="178" height="558" frameX="-194" frameY="-108" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Walk0001" x="1104" y="0" width="180" height="567" frameX="-193" frameY="-107" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Walk0002" x="1284" y="0" width="180" height="561" frameX="-193" frameY="-107" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Walk0003" x="1104" y="0" width="180" height="567" frameX="-193" frameY="-107" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Idle0000" x="1104" y="567" width="180" height="562" frameX="-179" frameY="-99" frameWidth="720" frameHeight="701"/>
+	<SubTexture name="Damage0000" x="0" y="616" width="371" height="617" frameX="-133" frameY="-105" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Attack0000" x="397" y="616" width="348" height="616" frameX="-156" frameY="-106" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Attack0001" x="756" y="0" width="348" height="616" frameX="-156" frameY="-106" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Attack0002" x="397" y="0" width="359" height="616" frameX="-156" frameY="-106" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Attack0003" x="0" y="0" width="397" height="616" frameX="-156" frameY="-106" frameWidth="720" frameHeight="720"/>
+</TextureAtlas>

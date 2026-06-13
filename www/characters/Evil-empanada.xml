@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Evil-empanada.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="Walk0000" x="0" y="0" width="560" height="511" frameX="-34" frameY="-182" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Walk0001" x="560" y="0" width="560" height="511" frameX="-34" frameY="-182" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Walk0002" x="560" y="511" width="560" height="511" frameX="-34" frameY="-182" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Walk0003" x="0" y="511" width="560" height="511" frameX="-34" frameY="-182" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Walk0004" x="1120" y="0" width="560" height="503" frameX="-34" frameY="-182" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Walk0005" x="1120" y="503" width="560" height="503" frameX="-34" frameY="-182" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Attack0000" x="0" y="1022" width="560" height="490" frameX="-34" frameY="-182" frameWidth="720" frameHeight="720"/>
+	<SubTexture name="Idle0000" x="560" y="1022" width="544" height="486" frameX="-74" frameY="-193" frameWidth="720" frameHeight="720"/>
+</TextureAtlas>
