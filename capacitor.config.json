@@ -1,0 +1,10 @@
+{
+  "appId": "com.mrchile.kingventure",
+  "appName": "Kingventure",
+  "webDir": "www",
+  "plugins": {
+    "ScreenOrientation": {
+      "orientation": "landscape"
+    }
+  }
+}
