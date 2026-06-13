@@ -1,0 +1,15 @@
+{
+  "name": "kingventure-recover-the-crown",
+  "version": "1.0.0",
+  "description": "Juego de plataformas 2D Kingventure empaquetado para Android",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'No build step needed for pure web assets'"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/cli": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/screen-orientation": "^6.0.0"
+  }
+}
